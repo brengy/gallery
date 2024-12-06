@@ -33,13 +33,15 @@ h2 {
 
 .image-container img,
 .image-container video {
-    width: calc(33.33% - 10px);
+    width: calc(33.33% - 10px); /* Maintain the responsive width */
     max-width: 100%;
-    height: calc(33.33% - 10px);
+    height: 400px; /* Set the height to 400px */
+    object-fit: cover; /* Ensure proper aspect ratio */
     border-radius: 10px;
     transition: transform 0.3s ease;
     cursor: pointer; /* Add cursor pointer */
 }
+
 
 .image-container img:hover,
 .image-container video:hover {

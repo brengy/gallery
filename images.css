@@ -35,7 +35,7 @@ h2 {
 .image-container video {
     width: calc(33.33% - 10px);
     max-width: 100%;
-    height: auto;
+    height: calc(33.33% - 10px);
     border-radius: 10px;
     transition: transform 0.3s ease;
     cursor: pointer; /* Add cursor pointer */

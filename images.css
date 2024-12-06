@@ -1,0 +1,130 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: url('bv8.gif') no-repeat center center fixed;
+    background-size: cover;
+    color: #fff;
+}
+
+.gallery {
+    padding: 20px;
+    overflow-y: auto; /* Make the gallery scrollable */
+}
+
+.section {
+    margin-bottom: 20px;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.image-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    max-width: 1200px;
+    animation: fadeIn 1s ease-out;
+}
+
+.image-container img,
+.image-container video {
+    width: calc(33.33% - 10px);
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+    cursor: pointer; /* Add cursor pointer */
+}
+
+.image-container img:hover,
+.image-container video:hover {
+    transform: scale(1.1);
+}
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8); /* Black background with opacity */
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-around;
+    background-color: #00000e;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    animation: fadeInUp 1s ease-out 1s; /* Apply the animation with a delay */
+}
+
+.footer button {
+    background-color: #6892db;
+    font-weight: bold; /* Make text bold */
+    color: rgba(255, 255, 228, 1);
+    border-radius: 100px;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.footer button:hover {
+    background-color: #555;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

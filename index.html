@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image and Video Gallery</title>
+    <link rel="stylesheet" href="images.css">
+</head>
+<body>
+    <div class="gallery">
+        <div class="section">
+            <h2>Car Videos</h2>
+            <div class="image-container" id="contentContainerC"></div>
+        </div>
+        <div class="section">
+            <h2>Other Videos</h2>
+            <div class="image-container" id="contentContainerD"></div>
+        </div>
+        <div class="section">
+            <h2>Car Photos</h2>
+            <div class="image-container" id="contentContainerE"></div>
+        </div>
+        <div class="section">
+            <h2>Other Photos</h2>
+            <div class="image-container" id="contentContainerF"></div>
+        </div>
+    </div>
+    <div class="modal" id="modal">
+        <span class="close" id="closeModal">&times;</span>
+        <img class="modal-content" id="modalImage">
+        <video class="modal-content" id="modalVideo" controls></video>
+    </div>
+  
+    <script src="images.js"></script>
+</body>
+</html>

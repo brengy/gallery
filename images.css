@@ -36,7 +36,7 @@ h2 {
     width: calc(33.33% - 10px); /* Maintain the responsive width */
     max-width: 100%;
     height: 220px; /* Set the height to 400px */
-    object-fit: cover; /* Ensure proper aspect ratio */
+    object-fit: fit; /* Ensure proper aspect ratio */
     border-radius: 10px;
     transition: transform 0.3s ease;
     cursor: pointer; /* Add cursor pointer */
@@ -45,6 +45,20 @@ h2 {
 
 .image-container img:hover,
 .image-container video:hover {
+    transform: scale(1.1);
+}
+
+.image-container iframe {
+    width: auto; /*calc(33.33% - 10px); */
+	 max-width: 100%;
+    height: 220px; /* Ensures the height scales proportionally */
+    object-fit: fit; /* Ensure proper aspect ratio */
+  border-radius: 10px;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.image-container iframe:hover {
     transform: scale(1.1);
 }
 

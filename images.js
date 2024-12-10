@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const sections = [
         { id: 'contentContainerC', label: 'C', name: 'My Videos' },
         { id: 'contentContainerD', label: 'D', name: 'Other Videos' },
@@ -28,7 +28,9 @@ document.addEventListener('DOMContentLoaded', function() {
         const contentContainer = document.getElementById(containerId);
         contentArray.forEach(url => {
             if (url) {
-                if (url.endsWith('.mp4')) {
+                if (url.includes('vimeo.com')) {
+                    createVimeoElement(url, contentContainer);
+                } else if (url.endsWith('.mp4')) {
                     createVideoElement(url, contentContainer);
                 } else {
                     createImageElement(url, contentContainer);
@@ -45,6 +47,18 @@ document.addEventListener('DOMContentLoaded', function() {
         container.appendChild(img);
     }
 
+    function createVimeoElement(src, container) {
+        const iframe = document.createElement('iframe');
+        const vimeoID = src.split('/').pop(); // Extract the Vimeo video ID
+        iframe.src = `https://player.vimeo.com/video/${vimeoID}`;
+        iframe.width = "640";
+        iframe.height = "360";
+        iframe.frameBorder = "0";
+        iframe.allow = "autoplay; fullscreen; picture-in-picture";
+        iframe.title = "Vimeo Video";
+        container.appendChild(iframe);
+    }
+
     function createVideoElement(src, container) {
         const video = document.createElement('video');
         video.src = src;
@@ -58,15 +72,28 @@ document.addEventListener('DOMContentLoaded', function() {
         const modal = document.getElementById('modal');
         const modalImage = document.getElementById('modalImage');
         const modalVideo = document.getElementById('modalVideo');
+        const modalIframe = document.getElementById('modalIframe');
+
         modal.style.display = 'block';
+
         if (type === 'image') {
             modalImage.style.display = 'block';
             modalVideo.style.display = 'none';
+            modalIframe.style.display = 'none';
             modalImage.src = src;
         } else if (type === 'video') {
-            modalVideo.style.display = 'block';
-            modalImage.style.display = 'none';
-            modalVideo.src = src;
+            if (src.includes('vimeo.com')) {
+                modalIframe.style.display = 'block';
+                modalVideo.style.display = 'none';
+                modalImage.style.display = 'none';
+                const vimeoID = src.split('/').pop(); // Extract the Vimeo video ID
+                modalIframe.src = `https://player.vimeo.com/video/${vimeoID}`;
+            } else {
+                modalVideo.style.display = 'block';
+                modalIframe.style.display = 'none';
+                modalImage.style.display = 'none';
+                modalVideo.src = src;
+            }
         }
     }
 
@@ -75,6 +102,7 @@ document.addEventListener('DOMContentLoaded', function() {
         modal.style.display = 'none';
         document.getElementById('modalImage').src = '';
         document.getElementById('modalVideo').src = '';
+        document.getElementById('modalIframe').src = '';
     }
 
     document.getElementById('closeModal').onclick = closeModal;

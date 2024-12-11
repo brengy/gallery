@@ -3,7 +3,8 @@ document.addEventListener('DOMContentLoaded', function () {
         { id: 'contentContainerC', label: 'C', name: 'My Videos' },
         { id: 'contentContainerD', label: 'D', name: 'Other Videos' },
         { id: 'contentContainerE', label: 'E', name: 'Car Photos' },
-        { id: 'contentContainerF', label: 'F', name: 'Other Photos' }
+        { id: 'contentContainerF', label: 'F', name: 'Other Photos' },
+ { id: 'contentContainerE', label: 'G', name: 'dd hotos' }
     ];
     const apiKey = 'AIzaSyBh82Bqe-FfnZdzjGSVwmrpdKiURhhHaZ4'; // Replace with your Google Sheets API key
     const sheetId = '1Vn9sSmLbbMvZ9lJO1HxhuU4v1Sjs7Hs7jOlZT2c-9ms'; // Replace with your Google Sheet ID

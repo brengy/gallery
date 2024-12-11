@@ -49,10 +49,10 @@ h2 {
 }
 
 .image-container iframe {
-    width: auto; /*calc(33.33% - 10px); */
-	 max-width: 100%;
+    width:  calc(33.33% - 10px);
+	 max-width: calc(33.33% - 10px);
     height: 220px; /* Ensures the height scales proportionally */
-    object-fit: fit; /* Ensure proper aspect ratio */
+    object-fit: cover; /* Ensure proper aspect ratio */
   border-radius: 10px;
     transition: transform 0.3s ease;
     cursor: pointer;

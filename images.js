@@ -113,12 +113,7 @@ function createYouTubeEmbed(src, container) {
         iframe.style.marginBottom = "10px";
         container.appendChild(iframe);
 
-        const premiereNotice = document.createElement('div');
-        premiereNotice.textContent = "Note: This is a YouTube Premiere. Content may not be available until the scheduled time.";
-        premiereNotice.style.color = "#fff";
-        premiereNotice.style.textAlign = "center";
-        premiereNotice.style.fontSize = "14px";
-        container.appendChild(premiereNotice);
+      
     } else {
         console.error("Invalid YouTube video URL:", src);
     }

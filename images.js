@@ -33,7 +33,7 @@ function displayContent(contentArray, containerId) {
             } else if (url.endsWith('.mp4')) {
                 createVideoElement(url, contentContainer);
             } 
-			else if (url.endsWith('vimeo.com')) {
+			else if (url.includes('vimeo.com')) {
                 createVideoElement(url, contentContainer);
             } else {
                 createImageElement(url, contentContainer);
